@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ad Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom styles for the ad iframes to ensure responsiveness and centering */
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 1rem; /* Add some padding around the ad */
+            margin-bottom: 1rem; /* Space between ad containers */
+        }
+        .ad-iframe-wrapper {
+            /* Default max width for the larger ad */
+            width: 970px;
+            max-width: 100%; /* Ensure it's responsive */
+            height: 250px;
+            overflow: hidden; /* Hide any overflow from the ad */
+            border-radius: 0.75rem; /* Rounded corners for the ad container */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #ffffff; /* White background for the ad wrapper */
+            display: flex; /* Use flex to center iframe within wrapper if needed */
+            justify-content: center;
+            align-items: center;
+        }
+        .ad-iframe-wrapper-small {
+            /* Specific width and height for the smaller ad */
+            width: 728px;
+            max-width: 100%; /* Ensure it's responsive */
+            height: 90px;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ad-iframe-wrapper iframe {
+            width: 100%; /* Make iframe fill its wrapper */
+            height: 100%; /* Make iframe fill its wrapper */
+            display: block; /* Remove extra space below iframe */
+        }
+        .ad-iframe-wrapper-small iframe {
+            width: 100%; /* Make iframe fill its wrapper */
+            height: 100%; /* Make iframe fill its wrapper */
+            display: block; /* Remove extra space below iframe */
+        }
+        /* Media queries for smaller screens to adjust iframe size if needed */
+        @media (max-width: 1024px) {
+            .ad-iframe-wrapper {
+                height: 200px; /* Slightly smaller height on tablets */
+            }
+        }
+        @media (max-width: 768px) {
+            .ad-iframe-wrapper {
+                height: 150px; /* Even smaller height on mobile */
+            }
+            .ad-iframe-wrapper-small {
+                height: 70px; /* Adjust height for smaller banner on mobile */
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-md rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold rounded-md px-3 py-1 bg-white bg-opacity-20">AdSite Pro</h1>
+            <nav>
+                <ul class="flex space-x-4 md:space-x-6">
+                    <li><a href="#" class="hover:underline text-lg md:text-xl font-medium rounded-md px-3 py-1 hover:bg-white hover:bg-opacity-20 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:underline text-lg md:text-xl font-medium rounded-md px-3 py-1 hover:bg-white hover:bg-opacity-20 transition duration-300">About</a></li>
+                    <li><a href="#" class="hover:underline text-lg md:text-xl font-medium rounded-md px-3 py-1 hover:bg-white hover:bg-opacity-20 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content - Ad Display Section -->
+    <main class="flex-grow container mx-auto p-4 md:p-8 flex flex-col items-center justify-center">
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-4xl text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">Welcome to Our Ad Showcase!</h2>
+            <p class="text-gray-600 text-lg mb-6">Explore various advertisements here. Your interactions help support our content.</p>
+
+            <!-- Ad Container 1 (Larger Ad) -->
+            <div class="ad-container">
+                <div class="ad-iframe-wrapper">
+                    <!-- Your provided ad iframe -->
+                    <iframe data-aa='2399262' src='//ad.a-ads.com/2399262?size=970x250' style='width:100%; height:100%; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                </div>
+            </div>
+
+            <!-- Ad Container 2 (Smaller Ad) -->
+            <div class="ad-container">
+                <div class="ad-iframe-wrapper-small">
+                    <!-- Your new ad iframe -->
+                    <iframe data-aa='2399263' src='//ad.a-ads.com/2399263?size=728x90' style='width:100%; height:100%; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-sm mt-6">Ads are provided by third-party networks and may vary in content.</p>
+        </section>
+
+        <!-- Placeholder for more content if needed -->
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-4xl text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4">What We Offer</h3>
+            <p class="text-gray-600 text-base mb-4">We aim to provide a platform for diverse advertisements while ensuring a clean and user-friendly experience for our visitors.</p>
+            <p class="text-gray-600 text-base">Stay tuned for more updates and exciting ad content!</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8 rounded-t-lg">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2025 AdSite Pro. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:underline mx-2">Privacy Policy</a> |
+                <a href="#" class="hover:underline mx-2">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
